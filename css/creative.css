@@ -335,7 +335,7 @@ header.masthead p {
 }
 
 .menu-item .menu-thumb-container .menu-thumb {
-
+  border-radius: 50%;
 }
 
 .menu-item .menu-item-content {
