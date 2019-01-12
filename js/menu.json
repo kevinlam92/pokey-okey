@@ -1,0 +1,427 @@
+var menu =
+{
+  "sections" : [
+    {
+      "header": "Signature Bowls",
+      "items": [
+        {
+          "name": "Small",
+          "price": "11.00"
+        },
+        {
+          "name": "Small",
+          "price": "13.50"
+        },
+        {
+          "name": "Small",
+          "price": "16.00"
+        },
+      ]
+    },
+    {
+      "header": "Choose from",
+      "items": [
+        {
+          "image": "img/menu/green_bowl.jpg",
+          "name": "The Green Bowl",
+          "description": "Tuna, salmon, capelin roe, seaweed salad, purple cabbage, soybeans, pickled onions, pickled ginger, wasabi peas, seaweed flakes, and wasabi mayo.",
+        },
+        {
+          "image": "img/menu/red_bowl.jpg",
+          "name": "The Red Bowl",
+          "description": "Spicy tuna, spicy salmon, flying fish roe, seaweed salad, radishes, kimchi, carrots, sprouts, bacon bits, seaweed flakes, and spicy sesame sauce.",
+        },
+        {
+          "image": "img/menu/yellow_bowl.jpg",
+          "name": "The Yellow Bowl",
+          "description": "Spicy salmon, scallop salad, pineapple salsa, sweet corn salad, pickled onions, sweet omelette, green onions, tempura flakes, seaweed flakes, and Pokey Okey sauce.",
+        },
+      ]
+    },
+    {
+      "header": "with your choice of",
+      "items": [
+        {
+          "image": "img/menu/rice.jpg",
+          "name": "Rice"
+        },
+        {
+          "image": "img/menu/spring_mix.jpg",
+          "name": "Spring Mix"
+        },
+        {
+          "image": "img/menu/brown_rice.jpg",
+          "name": "Brown Rice"
+        },
+        {
+          "image": "fa-plus",
+          "name": "Any combination of the above"
+        },
+      ]
+    },
+    {
+      "header": "Additional Options",
+      "items": [
+        {
+          "image": "img/menu/avocado.jpg",
+          "name": "Avocado",
+          "price": "2.00"
+        },
+        {
+          "image": "img/menu/tofu.jpg",
+          "name": "Tofu",
+          "price": "2.50"
+        },
+        {
+          "image": "img/menu/octopus.jpg",
+          "name": "Octopus",
+          "price": "4.00"
+        },
+        {
+          "image": "img/menu/coconut_shrimp.jpg",
+          "name": "Coconut Shrimp",
+          "price": "2.50"
+        },
+        {
+          "image": "img/menu/salmon.jpg",
+          "name": "Salmon",
+          "price": "2.50"
+        },
+        {
+          "image": "img/menu/spicy_salmon.jpg",
+          "name": "Spicy Salmon",
+          "price": "2.50"
+        },
+        {
+          "image": "img/menu/ahi.jpg",
+          "name": "Ahi Tuna",
+          "price": "2.50"
+        },
+        {
+          "image": "img/menu/spicy_ahi.jpg",
+          "name": "Spicy Ahi Tuna",
+          "price": "2.50"
+        },
+        {
+          "image": "img/menu/scallop.jpg",
+          "name": "Scallop Salad",
+          "price": "2.50"
+        },
+        {
+          "image": "img/menu/aburi_salmon.jpg",
+          "name": "Torched Salmon Belly",
+          "price": "4.00"
+        },
+        {
+          "image": "img/menu/capelin_roe.jpg",
+          "name": "Capelin Roe",
+          "price": "1.00"
+        },
+        {
+          "image": "img/menu/flying_fish_roe.jpg",
+          "name": "Flying Fish Roe",
+          "price": "2.00"
+        },
+        {
+          "image": "img/menu/egg.jpg",
+          "name": "Sweet Omelette",
+          "price": "1.00"
+        },
+        {
+          "image": "img/menu/onsen_egg.jpg",
+          "name": "Pokey Yokey",
+          "price": "2.00"
+        },
+      ]
+    },
+    {
+      "header": "Build-A-Bowl",
+      "items": [
+        {
+          "name": "Small (One Scoop)",
+          "price": "10.00"
+        },
+        {
+          "name": "Medium (Two Scoops)",
+          "price": "12.50"
+        },
+        {
+          "name": "Large (Three Scoops)",
+          "price": "15.00"
+        },
+      ]
+    },
+    {
+      "header": "Base (Choose 1/2/3)",
+      "items": [
+        {
+          "image": "img/menu/rice.jpg",
+          "name": "Rice"
+        },
+        {
+          "image": "img/menu/spring_mix.jpg",
+          "name": "Spring Mix"
+        },
+        {
+          "image": "img/menu/brown_rice.jpg",
+          "name": "Brown Rice"
+        }
+      ]
+    },
+    {
+      "header": "Protein (Choose 1/2/3)",
+      "items": [
+        {
+          "image": "img/menu/avocado.jpg",
+          "name": "Avocado",
+        },
+        {
+          "image": "img/menu/tofu.jpg",
+          "name": "Tofu",
+        },
+        {
+          "image": "img/menu/octopus.jpg",
+          "name": "Octopus",
+          "price": "1.50"
+        },
+        {
+          "image": "img/menu/coconut_shrimp.jpg",
+          "name": "Coconut Shrimp",
+        },
+        {
+          "image": "img/menu/salmon.jpg",
+          "name": "Salmon",
+        },
+        {
+          "image": "img/menu/spicy_salmon.jpg",
+          "name": "Spicy Salmon",
+        },
+        {
+          "image": "img/menu/ahi.jpg",
+          "name": "Ahi Tuna",
+        },
+        {
+          "image": "img/menu/spicy_ahi.jpg",
+          "name": "Spicy Ahi Tuna",
+        },
+        {
+          "image": "img/menu/scallop.jpg",
+          "name": "Scallop Salad",
+        },
+        {
+          "image": "img/menu/aburi_salmon.jpg",
+          "name": "Torched Salmon Belly",
+          "price": "1.50"
+        },
+        {
+          "image": "img/menu/egg.jpg",
+          "name": "Sweet Omelette",
+          "price": "1.00"
+        },
+        {
+          "image": "img/menu/onsen_egg.jpg",
+          "name": "Pokey Yokey (Onsen egg)",
+          "price": "2.00"
+        },
+        {
+          "image": "fa-plus",
+          "name": "Extra Protein",
+          "price": "2.50"
+        },
+      ]
+    },
+    {
+      "header": "Vegetables (Choose 4)",
+      "items": [
+        {
+          "image": "img/menu/edamame.jpg",
+          "name": "Soybeans"
+        },
+        {
+          "image": "img/menu/kimchi.jpg",
+          "name": "Kimchi"
+        },
+        {
+          "image": "img/menu/seaweed_salad.jpg",
+          "name": "Seaweed Salad"
+        },
+        {
+          "image": "img/menu/carrot_white_radish.jpg",
+          "name": "Carrot and Daikon"
+        },
+        {
+          "image": "img/menu/purple_cabbage.jpg",
+          "name": "Purple Cabbage"
+        },
+        {
+          "image": "img/menu/radish.jpg",
+          "name": "Radish"
+        },
+        {
+          "image": "img/menu/sweet_corn.jpg",
+          "name": "Sweet Corn"
+        },
+        {
+          "image": "img/menu/sprouts.jpg",
+          "name": "Sprouts"
+        },
+        {
+          "image": "img/menu/imitation_crab.jpg",
+          "name": "Imitation Crab"
+        },
+        {
+          "image": "img/menu/green_onion.jpg",
+          "name": "Green Onion"
+        },
+        {
+          "image": "img/menu/pineapple_salsa.jpg",
+          "name": "Pineapple Salsa"
+        },
+        {
+          "image": "img/menu/pickled_ginger.jpg",
+          "name": "Pickled Ginger"
+        },
+        {
+          "image": "img/menu/pickled_onion.jpg",
+          "name": "Pickled Onion"
+        },
+        {
+          "image": "fa-plus",
+          "name": "Extra Vegetables",
+          "price": "0.50"
+        },
+      ]
+    },
+    {
+      "header": "Dry Toppings",
+      "items": [
+        {
+          "image": "img/menu/fried_garlic.jpg",
+          "name": "Fried Garlic"
+        },
+        {
+          "image": "img/menu/fried_onion.jpg",
+          "name": "Fried Onion"
+        },
+        {
+          "image": "img/menu/wasabi_peas.jpg",
+          "name": "Wasabi Peas"
+        },
+        {
+          "image": "img/menu/seaweed_flakes.jpg",
+          "name": "Seaweed Flakes"
+        },
+        {
+          "image": "img/menu/tempura_flakes.jpg",
+          "name": "Tempura Flakes"
+        },
+        {
+          "image": "img/menu/bacon_bits.jpg",
+          "name": "Bacon Bits"
+        },
+        {
+          "image": "img/menu/ramen_noodles.jpg",
+          "name": "Ramen Noodles"
+        },
+      ]
+    },
+    {
+      "header": "Premium Toppings",
+      "items": [
+        {
+          "image": "img/menu/egg.jpg",
+          "name": "Sweet Omelette",
+          "price": "1.00"
+        },
+        {
+          "image": "img/menu/capelin_roe.jpg",
+          "name": "Capelin Roe",
+          "price": "1.00"
+        },
+        {
+          "image": "img/menu/flying_fish_roe.jpg",
+          "name": "Flying Fish Roe",
+          "price": "2.00"
+        },
+        {
+          "image": "img/menu/avocado.jpg",
+          "name": "Avocado",
+          "price": "2.00"
+        },
+        {
+          "image": "img/menu/onsen_egg.jpg",
+          "name": "Pokey Yokey (Onsen egg)",
+          "price": "2.00"
+        },
+      ]
+    },
+    {
+      "header": "Sauces",
+      "items": [
+        {
+          "name": "Pokey Okey Sauce",
+          "description": "Special house sauce, sweet with a hint of tanginess"
+        },
+        {
+          "name": "Wasabi Mayo",
+          "description": "Rich Japanese mayonnaise combined with real wasabi root"
+        },
+        {
+          "name": "Spicy Sesame",
+          "description": "Spicy Korean bean paste blended with tasty sesame"
+        },
+        {
+          "name": "Miso Sesame",
+          "description": "Smooth sesame with a hint of sweet miso"
+        },
+        {
+          "name": "Ponzu Vinaigrette",
+          "description": "Light Japanese citrus infused with fresh ginger"
+        },
+        {
+          "name": "Smokey Teriyaki"
+        },
+      ]
+    },
+    {
+      "header": "Drinks",
+      "items": [
+        {
+          "name": "Bubly Lime",
+          "description": "355mL",
+          "price": "1.50"
+        },
+        {
+          "name": "Lemon Lemon",
+          "description": "355mL",
+          "price": "1.50"
+        },
+        {
+          "name": "Spring Water",
+          "description": "355mL",
+          "price": "2.00"
+        },
+        {
+          "name": "Sparkling Water",
+          "description": "500mL",
+          "price": "2.00"
+        },
+        {
+          "name": "Calpico (Can)",
+          "description": "355mL",
+          "price": "2.50"
+        },
+        {
+          "name": "Calpico White Peach",
+          "description": "500mL",
+          "price": "3.00"
+        },
+        {
+          "name": "Coconut Water",
+          "description": "520mL",
+          "price": "3.00"
+        },
+      ]
+    }
+  ]
+}

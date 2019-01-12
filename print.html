@@ -1,0 +1,64 @@
+<html>
+<body>
+  <style>
+    body {
+      float: none;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      overflow: visible;
+      display: block;
+      margin: 0 !important;
+      font-family: monospace;
+      font-size: 16px;
+    }
+
+    div {
+      width: calc(50% - 4rem - 2px);
+      float: left;
+      padding: 1rem;
+      border: 1px solid #000;
+      margin: 1rem;
+      page-break-inside: avoid;
+    }
+
+    ol {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      margin-left: 1rem;
+    }
+  </style>
+  <div>
+    <h3>{name}</h3>
+    <ol>
+      <li>{base}</li>
+      <li>{vegetable}</li>
+      <li>{sauce}</li>
+      <li>{protein}</li>
+      <li>{topping}</li>
+      <li>{garnish}</li>
+    </ol>
+    Comments: {comment}
+  </div>
+  <div>
+    <h2>Order 2</h2>
+    <h3>Bowl Name</h3>
+    <ol>
+      <li>Base</li>
+      <li>Vege</li>
+      <li>Sauce</li>
+    </ol>
+  </div>
+  <div>
+    <h2>Order 3</h2>
+    <h3>Bowl Name</h3>
+    <ol>
+      <li>Base</li>
+      <li>Vege</li>
+      <li>Sauce</li>
+    </ol>
+  </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+{
+  // Base
+  WhiteRice: 1,
+  BrownRice: 1,
+  SpringMix: 1,
+
+  // Vegetables
+  Soybeans: 2,
+  Kimchi: 2,
+  Seaweed: 2,
+  CarrotDaikon: 2,
+  PurpleCabbage: 2,
+  Radish: 2,
+  SweetCorn: 2,
+  Sprouts: 2,
+  ImitationCrab: 2,
+  GreenOnion: 2,
+  PineappleSalsa: 2,
+  PickedGinger: 2,
+  PickledOnion: 2,
+
+  // Sauce
+  PokeyOkey: 3,
+  WasabiMayo: 3,
+  SpicySesame: 3,
+  MisoSesame: 3,
+  PonzuVinaigrette: 3,
+  SmokeyTeriyaki: 3,
+
+  // Protein
+  Ahi: 4,
+  Salmon: 4,
+  Scallop: 4,
+  SpicySalmon: 4,
+  Egg: 4,
+  Tofu: 4,
+  Avocado: 4,
+  CoconutShrimp: 4,
+  Octopus: 4,
+  AburiSalmon: 4,
+
+  // Toppings
+  FriedGarlic: 5,
+  FriedOnions: 5,
+  WasabiPeas: 5,
+  SeaweedFlakes: 5,
+  TempuraFlakes: 5,
+  BaconBits: 5,
+
+  // Garnishes
+  CapelinRoe: 6,
+  FlyingFishRoe: 6,
+
+}

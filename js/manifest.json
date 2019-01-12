@@ -1,0 +1,21 @@
+{
+  "short_name": "Pokey Okey",
+  "name": "Pokey Okey",
+  "icons": [
+    {
+      "src": "/pokey-okey/img/favicon_192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/pokey-okey/img/favicon_512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/pokey-okey/index.html",
+  "background_color": "#FFB3AB",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#6a6a6a"
+}

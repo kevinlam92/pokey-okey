@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Pokey Okey - Order Pick Up</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- Material Design Bootstrap -->
+  <link href="vendor/mdb/mdb.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/creative.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <div id="header" class="text-center center-vertical py-2">
+    <div class="d-lg-flex">
+      <div class="w-100 align-self-center py-2">
+        <div class="logo thumb"></div>
+      </div>
+      <div class="w-100 align-self-center text-uppercase">
+        <span class="hours-today d-none translatable" data-i18n="footer hours open">Open today at 11 AM to 8 PM</span>
+        <span class="hours-now d-none translatable" data-i18n="footer hours open">Open now from 11 AM to 8 PM</span>
+        <span class="hours-tomorrow d-none translatable" data-i18n="footer hours closed">Open tomorrow at 11 AM to 8 PM</span>
+      </div>
+      <div class="w-100 align-self-center text-uppercase translatable" data-i18n="footer address">
+        8060 Anderson Road Richmond BC
+      </div>
+    </div>
+  </div>
+
+  <div id="ordering" class="d-flex">
+    <div class="container my-auto ml-auto">
+      <div class="row text-center mt-5">
+        <h1 class="w-100 text-uppercase text-dark-gray text-spaced">Order For Pickup</h1>
+      </div>
+      <div class="alert alert-pokey" role="alert">
+        <p>To place an online order for pick up, simply choose from our menu below to get started.
+          After you submit your order, we'll notify you shortly that we have received the order and begin
+          preparing your food. We'll notify you again when your order is ready to be picked up.</p>
+          <p class="mb-0">Payment is done in store, also be sure you collect stamps for your order when you drop by (only web orders from our site is eligible for stamps)!</p>
+        </div>
+        <div class="row text-center mt-5">
+          <h2 class="w-100 text-uppercase text-dark-gray text-spaced">Signature Bowls</h2>
+        </div>
+        <div id="signatureBowlOrderMenu" class="row">
+          <order-item
+          v-for="item in items"
+          v-bind:item="item">
+        </order-item>
+      </div>
+      <div class="row text-center mt-5">
+        <h2 class="w-100 text-uppercase text-dark-gray text-spaced">Build-A-Bowls</h2>
+      </div>
+      <div id="buildBowlOrderMenu" class="row">
+        <order-item
+        v-for="item in items"
+        v-bind:item="item">
+      </order-item>
+    </div>
+    <div class="row text-center mt-5">
+      <h2 class="w-100 text-uppercase text-dark-gray text-spaced">Drinks</h2>
+    </div>
+    <div id="drinksOrderMenu" class="row">
+      <order-item
+      v-for="item in items"
+      v-bind:item="item">
+    </order-item>
+  </div>
+</div>
+</div>
+
+<div id="mobileFooter" class="d-xl-none center-vertical text-dark-gray">
+  <button id="mobileCartToggle" class="btn btn-outline mx-auto my-auto w-75" onclick="toggleCart()">
+    <cart-subtotal>
+    </cart-subtotal>
+    <div>
+      <i class="fas fa-shopping-cart"></i>
+      <span class="view-cart">View Cart</span>
+    </div>
+  </button>
+</div>
+
+<div id ="cart" class="d-xl-block shadow">
+  <div class="cart-content text-center text-dark-gray">
+    <div class="cart-header">
+      <button type="button" class="d-xl-none close" aria-label="Close"  onclick="toggleCart()">
+        <span class="m-2" aria-hidden="true"><i class="fas fa-chevron-down"></i></span>
+      </button>
+      <span class="w-100 center-vertical pt-xl-4 text-spaced text-uppercase">Cart</span>
+      <div id="cartSubtotal">
+        <cart-subtotal>
+        </cart-subtotal>
+      </div>
+    </div>
+    <div class="cart-body">
+      <div id="orderSummary" class="h-100">
+        <empty-cart-item
+        v-if="items.length == 0">
+      </empty-cart-item>
+      <order-summary-item
+      v-for="(item, key) in items"
+      v-bind:order="item"
+      v-bind:index="key">
+      <order-summary-details
+      v-for="(detail, key) in item.details"
+      v-bind:ingredients="detail"
+      v-bind:name="key">
+    </order-summary-details>
+  </order-summary-item>
+</div>
+</div>
+<div class="cart-footer center-vertical">
+  <button type="button" id="cartSubmit" class="btn btn-outline mx-auto" data-toggle="modal" data-target="#submitOrderModal">Review Order</button>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="signatureModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog text-dark-gray" role="document">
+    <div class="modal-content">
+      <div class="modal-header title">
+        <h3 class="modal-title" id="signatureModalTitle">{{ title }}</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-header">
+        <p class="hint" id="signatureModalDescription">{{ description }}</p>
+        <p class="mx-3" id="signatureModalPrice" v-bind:data-price="price">${{ price }}</p>
+      </div>
+
+
+      <div class="modal-body">
+        <div id="signatureSizeSection" class="modal-section">
+          <h3>Choose Size</h3>
+          <label class="hint ">Choose 1</label>
+          <signature-size-item
+          v-for="item in items"
+          v-bind:prefix="prefix"
+          v-bind:id="item.id"
+          v-bind:name="item.name"
+          v-bind:price="item.price">
+        </signature-size-item>
+      </div>
+      <div id="signatureBaseSection" class="modal-section">
+        <h3>Choose Base</h3>
+        <label class="hint">Choose between 1 and 3</label>
+        <check-item
+        v-for="item in items"
+        v-bind:prefix="prefix"
+        v-bind:id="item.id"
+        v-bind:name="item.name"
+        v-bind:price="item.price">
+      </check-item>
+    </div>
+
+    <div class="modal-section">
+      <h3>Add On</h3>
+      <p class="hint ">Choose as many as you would like</p>
+      <div id="signatureAddOnSection">
+        <check-item
+        v-for="item in items"
+        v-bind:prefix="prefix"
+        v-bind:id="item.id"
+        v-bind:name="item.name"
+        v-bind:price="item.price">
+      </check-item>
+    </div>
+  </div>
+  <div class="modal-section">
+    <div class="md-form">
+      <textarea type="text" id="signatureModalComments" class="md-textarea form-control" rows="3"  maxlength="200"></textarea>
+      <label for="signatureModalComments">Additional Comments (Optional)</label>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" id="signatureModalSubmit" class="btn btn-outline mx-auto" onclick="submitSignatureModal()">Add to Order</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="singleItemModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog text-dark-gray" role="document">
+    <div class="modal-content">
+      <div class="modal-header title">
+        <h3 class="modal-title" id="singleItemModalTitle">{{ title }}</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-header">
+        <p class="modal-title" id="singleItemModalPrice" v-bind:data-price="price">${{ price }}</p>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-section">
+          <div class="md-form">
+            <textarea id="singleItemModalComments" class="md-textarea form-control" rows="3"  maxlength="200"></textarea>
+            <label for="singleItemModalComments">Additional Comments (Optional)</label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="singleItemModalSubmit" class="btn btn-outline mx-auto" onclick="submitSingleItemModal()">Add to Order</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="submitOrderModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog text-dark-gray" role="document">
+    <div class="modal-content">
+      <div class="modal-header title">
+        <h3 class="modal-title" id="submitOrderModalTitle">Review Order</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form>
+          <div class="md-form">
+            <i class="fa fa-user prefix center-icon"></i>
+            <input id="submitOrderModalName" type="text" name="name" class="form-control"></input>
+            <label for="submitOrderModalName">Name</label>
+          </div>
+
+          <div class="md-form">
+            <i class="fa fa-envelope prefix center-icon"></i>
+            <input id="submitOrderModalEmail" type="text" name="email" class="form-control"></input>
+            <label for="submitOrderModalEmail">Email</label>
+          </div>
+
+          <div class="md-form">
+            <i class="fa fa-mobile-alt prefix center-icon"></i>
+            <input id="submitOrderModalPhone" type="tel" name="phone" class="form-control input-medium bfh-phone" data-format="ddd ddd dddd"></input>
+            <label for="submitOrderModalPhone">Phone</label>
+          </div>
+
+          <div class="custom-control custom-checkbox col-form-label">
+            <input type="checkbox" id="submitOrderModalSMS" class="custom-control-input">
+            <label for="submitOrderModalSMS" class="custom-control-label">
+              Receive SMS alerts when my order is ready for pick up
+            </label>
+          </div>
+          <div id="reviewOrderSummary">
+            <h4 class="text-center mt-3">Order Summary</h4>
+            <h6 class="text-center">
+              <cart-subtotal>
+              </cart-subtotal>
+            </h6>
+            <time-estimate>
+            </time-estimate>
+            <review-order-item
+            v-for="(item, key) in items"
+            v-bind:order="item"
+            v-bind:index="key">
+            <review-order-details
+            v-for="(detail, key) in item.details"
+            v-bind:ingredients="detail"
+            v-bind:name="key">
+          </review-order-details>
+        </review-order-item>
+      </div>
+
+      <div class="md-form">
+        <textarea id="submitOrderModalComments" class="md-textarea form-control" rows="3"  maxlength="200"></textarea>
+        <label for="submitOrderModalComments">Additional Comments (Optional)</label>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" id="singleItemModalSubmit" class="btn btn-outline mx-auto" onclick="submitOrder()">Submit Order</button>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="buildModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog text-dark-gray" role="document">
+    <div class="modal-content">
+      <div class="modal-header title">
+        <h3 class="modal-title" id="buildModalTitle">{{ title }}</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-header">
+        <p class="hint" id="buildModalDescription">{{ description }}</p>
+        <p class="modal-title" id="buildModalPrice" v-bind:data-price="price">${{ price }}</p>
+      </div>
+
+      <div class="modal-body">
+
+        <div id="buildBaseSection" class="modal-section">
+          <h3>Choose Base</h3>
+          <label class="hint">Choose between 1 and 3</label>
+          <check-item
+          v-for="item in items"
+          v-bind:prefix="prefix"
+          v-bind:id="item.id"
+          v-bind:name="item.name"
+          v-bind:price="item.price">
+        </check-item>
+      </div>
+
+      <div id="buildProteinSection" class="modal-section">
+        <h3>Choose Protein</h3>
+        <label class="hint">Choose exactly {{ scoops }}</label>
+        <build-protein-item ref="items"
+        v-for="item in items"
+        v-bind:prefix="prefix"
+        v-bind:id="item.id"
+        v-bind:name="item.name"
+        v-bind:scoops="scoops"
+        v-bind:price="item.price">
+        <build-protein-item>
+        </div>
+
+        <div id="buildExtraProteinSection" class="modal-section">
+          <h3>Add Extra Protein</h3>
+          <p class="hint ">Choose as many as you would like</p>
+          <check-item
+          v-for="item in items"
+          v-bind:prefix="prefix"
+          v-bind:id="item.id"
+          v-bind:name="item.name"
+          v-bind:price="item.price">
+        </check-item>
+      </div>
+
+      <div id="buildVegetableSection" class="modal-section">
+        <h3>Choose Vegetables</h3>
+        <label class="hint">Choose exactly 4</label>
+        <build-vegetable-item ref="items"
+        v-for="item in items"
+        v-bind:prefix="prefix"
+        v-bind:id="item.id"
+        v-bind:name="item.name"
+        v-bind:price="item.price">
+      </build-vegetable-item>
+    </div>
+
+    <div id="buildExtraVegetablesSection" class="modal-section">
+      <h3>Add Extra Vegetables</h3>
+      <p class="hint ">Choose as many as you would like</p>
+      <check-item
+      v-for="item in items"
+      v-bind:prefix="prefix"
+      v-bind:id="item.id"
+      v-bind:name="item.name"
+      v-bind:price="item.price">
+    </check-item>
+  </div>
+
+  <div id="buildSauceSection" class="modal-section">
+    <h3>Choose Sauce</h3>
+    <p class="hint ">Choose as many as you would like</p>
+    <check-item
+    v-for="item in items"
+    v-bind:prefix="prefix"
+    v-bind:id="item.id"
+    v-bind:name="item.name"
+    v-bind:price="item.price">
+  </check-item>
+</div>
+
+<div id="buildDrySection" class="modal-section">
+  <h3>Choose Dry Toppings</h3>
+  <p class="hint ">Choose as many as you would like</p>
+  <check-item
+  v-for="item in items"
+  v-bind:prefix="prefix"
+  v-bind:id="item.id"
+  v-bind:name="item.name"
+  v-bind:price="item.price">
+</check-item>
+</div>
+
+<div id="buildPremiumSection" class="modal-section">
+  <h3>Add Premium Toppings</h3>
+  <p class="hint">Choose as many as you would like</p>
+  <check-item
+  v-for="item in items"
+  v-bind:prefix="prefix"
+  v-bind:id="item.id"
+  v-bind:name="item.name"
+  v-bind:price="item.price">
+</check-item>
+</div>
+
+<div class="modal-section">
+  <div class="md-form">
+    <textarea id="buildModalComments" class="md-textarea form-control" rows="3"  maxlength="200"></textarea>
+    <label for="buildModalComments">Additional Comments (Optional)</label>
+  </div>
+</div>
+</div>
+<div class="modal-footer">
+  <button type="button" id="buildModalSubmit" class="btn btn-outline mx-auto" onclick="submitBuildModal()">Add to Order</button>
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- Vue.js -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<!-- Bootstrap core JavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc+VRZkx5xU3daN+lYb49+Ax+Tl" crossorigin="anonymous"></script>
+
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.9/js/mdb.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha256-H3cjtrm/ztDeuhCN9I4yh4iN2Ybx/y1RM7rMmAesA0k=" crossorigin="anonymous"></script>
+<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" integrity="sha256-P93G0oq6PBPWTP1IR8Mz/0jHHUpaWL0aBJTKauisG7Q=" crossorigin="anonymous"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/jquery.cookie.js"></script>
+<script src="js/bootstrap-formhelpers.min.js"></script>
+<script src="js/bootstrap-formhelpers-phone.en_US.js"></script>
+<script src="js/bootstrap-formhelpers-phone.js"></script>
+<script src="js/jquery.documentsize.js"></script>
+<script src="js/order.js"></script>
+<script src="js/common.js"></script>
+
+</body>
+
+</html>
