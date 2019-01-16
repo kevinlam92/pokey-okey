@@ -382,6 +382,12 @@ header.masthead p {
   color: #6a6a6a;
 }
 
+.card .no-header {
+  background-color: #FFB3AB;
+  padding-top: .25em;
+  padding-bottom: .25em;
+}
+
 .card .header {
   background-color: #FFB3AB;
   color: #6a6a6a;
@@ -399,10 +405,12 @@ header.masthead p {
   overflow: hidden;
 }
 
+#order .card,
 #ordering .card {
   border-bottom: 5px inset #fff;
 }
 
+#order .card:hover,
 #ordering .card:hover {
   border-bottom: 5px inset #FFB3AB;
   -webkit-transition: border-bottom 0.2s;
@@ -586,7 +594,7 @@ header.masthead p {
 }
 
 .hero-bg-2 {
-  height: 100vh;
+  min-height: 100vh;
   background-image:  url("../img/hero2.webp");
   background-position: center center;
   -webkit-background-size: cover;
@@ -869,4 +877,10 @@ body.cart-open {
 
 .section-icons {
   font-size: 3rem !important;
+}
+
+.order-selection {
+  border: 1px solid #FFB3AB;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1rem;
 }
