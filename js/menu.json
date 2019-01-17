@@ -9,11 +9,11 @@ var menu =
           "price": "11.00"
         },
         {
-          "name": "Small",
+          "name": "Medium",
           "price": "13.50"
         },
         {
-          "name": "Small",
+          "name": "Large",
           "price": "16.00"
         },
       ]
@@ -108,7 +108,7 @@ var menu =
           "price": "2.50"
         },
         {
-          "image": "img/menu/aburi_salmon.jpg",
+          "image": "img/menu/torched_salmon_belly.jpg",
           "name": "Torched Salmon Belly",
           "price": "4.00"
         },
@@ -209,7 +209,7 @@ var menu =
           "name": "Scallop Salad",
         },
         {
-          "image": "img/menu/aburi_salmon.jpg",
+          "image": "img/menu/torched_salmon_belly.jpg",
           "name": "Torched Salmon Belly",
           "price": "1.50"
         },
@@ -296,7 +296,7 @@ var menu =
       "header": "Dry Toppings",
       "items": [
         {
-          "image": "img/menu/fried_garlic.jpg",
+          "image": "img/menu/garlic.jpg",
           "name": "Fried Garlic"
         },
         {
@@ -308,19 +308,19 @@ var menu =
           "name": "Wasabi Peas"
         },
         {
-          "image": "img/menu/seaweed_flakes.jpg",
+          "image": "img/menu/furikake.jpg",
           "name": "Seaweed Flakes"
         },
         {
-          "image": "img/menu/tempura_flakes.jpg",
+          "image": "img/menu/tempura.jpg",
           "name": "Tempura Flakes"
         },
         {
-          "image": "img/menu/bacon_bits.jpg",
+          "image": "img/menu/bacon.jpg",
           "name": "Bacon Bits"
         },
         {
-          "image": "img/menu/ramen_noodles.jpg",
+          "image": "img/menu/ramen.jpg",
           "name": "Ramen Noodles"
         },
       ]

@@ -352,6 +352,10 @@ header.masthead p {
 
 .menu-item .menu-thumb-container .menu-thumb {
   border-radius: 50%;
+  height: 67px;
+  width: 67px;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .menu-item .menu-item-content {
