@@ -17,7 +17,7 @@
   <!-- Windows Phone -->
   <meta name="msapplication-navbutton-color" content="#FFB3AB">
   <!-- iOS Safari -->
-  <meta name="apple-mobile-web-app-status-bar-style" content="#FFB3AB">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
   <meta charset="utf-8">
 
@@ -68,12 +68,6 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item lang-en d-none">
-            <a class="nav-link lang-link" href="#lang-en"><i class="fas fa-globe-americas"></i> EN</a>
-          </li>
-          <li class="nav-item lang-zh">
-            <a class="nav-link lang-link" href="#lang-zh"><i class="fas fa-globe-asia"></i> 中文</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#about">About</a>
           </li>
@@ -114,27 +108,27 @@
         8060 Anderson Road Richmond BC
       </div>
       <div class="w-100 align-self-center text-uppercase">
-        <span class="hours-today d-none translatable" data-i18n="footer hours open">Open today at 11 AM to 8 PM</span>
-        <span class="hours-now d-none translatable" data-i18n="footer hours open">Open now from 11 AM to 8 PM</span>
-        <span class="hours-tomorrow d-none translatable" data-i18n="footer hours closed">Open tomorrow at 11 AM to 8 PM</span>
+        <span class="hours-today d-none">Open today at 11 AM to 8 PM</span>
+        <span class="hours-now d-none">Open now from 11 AM to 8 PM</span>
+        <span class="hours-tomorrow d-none">Open tomorrow at 11 AM to 8 PM</span>
       </div>
       <div class="w-100 align-self-center mt-1 d-none d-lg-block">
-        <a class="social-icon">
+        <a class="social-icon" href="https://www.facebook.com/pokeyokeyyvr/">
           <span class="fa-stack">
             <i class="fas fa-circle fa-stack-2x"></i>
             <i class="fab fa-facebook-f fa-stack-1x text-primary"></i>
           </span>
         </a>
-        <a class="social-icon">
+        <a class="social-icon" href="https://www.instagram.com/pokeyokeyyvr/?hl=en">
           <span class="fa-stack social-icon">
             <i class="fas fa-circle fa-stack-2x"></i>
             <i class="fab fa-instagram fa-stack-1x text-primary"></i>
           </span>
         </a>
-        <a class="social-icon">
+        <a class="social-icon" href="https://www.google.com/maps/place/Pokey+Okey/@49.1633957,-123.1359722,15z/data=!4m5!3m4!1s0x0:0xea1138e8708ee170!8m2!3d49.1633957!4d-123.1359722">
           <span class="fa-stack social-icon">
             <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fab fa-weixin fa-stack-1x text-primary"></i>
+            <i class="fab fa-google fa-stack-1x text-primary"></i>
           </span>
         </a>
       </div>
@@ -145,9 +139,9 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 mx-auto text-center text-lg-right center-vertical">
-          <h5 class="section-heading text-uppercase translatable" data-i18n="welcome article title">Welcome to</h5>
-          <h2 class="section-heading mb-3 text-uppercase translatable" data-i18n="brand name">Pokey Okey</h2>
-          <p class="article-text translatable" data-i18n="welcome article text"> Central Richmond’s first poke shop offers “a fresh take” on poke, with three original poke bowls influenced by different cuisine types that local residents already
+          <h5 class="section-heading text-uppercase">Welcome to</h5>
+          <h2 class="section-heading mb-3 text-uppercase">Pokey Okey</h2>
+          <p class="article-text">Central Richmond’s first poke shop offers “a fresh take” on poke, with three original poke bowls influenced by different cuisine types that local residents already
             love. Serving high quality food in the take-out format, Pokey Okey aims to provide customers with the ability to eat clean, even when time is limited. </p>
         </div>
         <div class="col-lg-6 mx-auto center-vertical">
@@ -174,8 +168,8 @@
 
       <div class="row">
         <div class="col-lg-8 mx-auto text-center mb-5">
-          <h3 class="translatable" data-i18n="article title">Who says convenient can't be healthy?</h3>
-          <p class="article-text translatable" data-i18n="article text">We at Pokey Okey believe that take-out can be both delicious and nutritious, so here’s “a fresh take” on poke!</p>
+          <h3>Who says convenient can't be healthy?</h3>
+          <p class="article-text">We at Pokey Okey believe that take-out can be both delicious and nutritious, so here’s “a fresh take” on poke!</p>
         </div>
       </div>
       <div class="row justify-content-center mb-5 mb-lg-0">
@@ -303,20 +297,20 @@
       <section id="order" class="text-center d-flex">
         <div class="container my-auto">
           <div class="row">
-            <div class="col-lg-12 mb-3 mb-lg-3 text-dark-gray">
+            <div class="col-lg-12 my-3 text-dark-gray">
               <h1>In-store Pickup</h1>
             </div>
-            <div class="col-lg-12 mx-auto my-lg-3 my-1 row-height-40 sr-card">
+            <div class="col-lg-8 mx-auto my-lg-3 my-1 row-height-40 sr-card">
               <a class="h-100" href="order.html">
                 <div class="card h-100">
                   <div class="no-header">
                   </div>
                   <div class="card-body menu-item">
-                    <div class="menu-item-content text-dark-gray">
+                    <div class="menu-item-content text-dark-gray py-3">
                       <div class="my-2">
                         <i class="fas fa-shopping-bag section-icons mb-3"></i>
                       </div>
-                      <p>Order for pickup</p>
+                      <h2>Skip the line &mdash; Order for Pickup</h2>
                       <p class="hint">Pickup in store to collect stamps!</p>
                     </div>
                   </div>
@@ -325,9 +319,10 @@
             </div>
             <div class="mx-auto mt-3 col-lg-12 text-dark-gray">
               <h1>Delivery Options</h1>
-              <p class="hint">Delivery options are ineligible for stamps</p>
+              <p class="hint"><small>Delivery options are ineligible for stamps</small></p>
+              <h2>Find us on:</h2>
             </div>
-            <div class="col-lg-6 mx-0 my-lg-3 my-1 row-height-40 sr-card">
+            <div class="col-xl-3 col-md-6 mx-0 my-3 row-height-40 sr-card">
               <a class="h-100" href="https://www.ubereats.com/en-CA/vancouver/food-delivery/pokey-okey/-9k-soJLQ3ahCtUdb1998g/">
                 <div class="card h-100">
                   <div class="header text-uppercase text-center">
@@ -339,7 +334,7 @@
                         <picture>
                           <source srcset="img/ubereats_dark.webp" type="image/webp">
                           <source srcset="img/ubereats_dark.png" type="image/jpg">
-                          <img width="200" src="img/ubereats_dark.png" />
+                          <img height="50" src="img/ubereats_dark.png" />
                         </picture>
                       </div>
                     </div>
@@ -347,7 +342,7 @@
                 </div>
               </a>
             </div>
-            <div class="col-lg-6 mx-0 my-lg-3 my-1 row-height-40 sr-card">
+            <div class="col-xl-3 col-md-6 mx-0 my-3 row-height-40 sr-card">
               <a class="h-100" href="https://www.skipthedishes.com/pokey-okey">
                 <div class="card h-100">
                   <div class="header text-uppercase text-center">
@@ -359,7 +354,7 @@
                         <picture>
                           <source srcset="img/skip_dark.webp" type="image/webp">
                           <source srcset="img/skip_dark.png" type="image/jpg">
-                          <img width="200" src="img/skip_dark.png" />
+                          <img height="50" src="img/skip_dark.png" />
                         </picture>
                       </div>
                     </div>
@@ -367,7 +362,7 @@
                 </div>
               </a>
             </div>
-            <div class="col-lg-6 mx-0 my-lg-3 my-1 row-height-40 sr-card">
+            <div class="col-xl-3 col-md-6 mx-0 my-3 row-height-40 sr-card">
               <a class="h-100">
                 <div class="card h-100">
                   <div class="header text-uppercase text-center">
@@ -379,7 +374,7 @@
                         <picture>
                           <source srcset="img/kabu_dark.webp" type="image/webp">
                           <source srcset="img/kabu_dark.png" type="image/jpg">
-                          <img width="200" src="img/kabu_dark.png" />
+                          <img height="50" src="img/kabu_dark.png" />
                         </picture>
                       </div>
                     </div>
@@ -387,8 +382,8 @@
                 </div>
               </a>
             </div>
-            <div class="col-lg-6 mx-0 my-lg-3 my-1 row-height-40 sr-card">
-              <a class="h-100">
+            <div class="col-xl-3 col-md-6 mx-0 my-3 row-height-40 sr-card">
+              <a class="h-100" id="fantuan">
                 <div class="card h-100">
                   <div class="header text-uppercase text-center">
                     fantuan
@@ -399,10 +394,14 @@
                         <picture>
                           <source srcset="img/fantuan_dark.webp" type="image/webp">
                           <source srcset="img/fantuan_dark.png" type="image/jpg">
-                          <img src="img/fantuan_dark.png" />
+                          <img height="100" src="img/fantuan_dark.png" />
                         </picture>
                       </div>
-                      <p class="hint text-dark-gray">Mobile App Required<p>
+                      <div class="text-center">
+                        <p class="hint app-tagline"><small>Mobile app required</small></p>
+                        <img class="app-badge-icon ios" src="img/appstore.svg" />
+                        <img class="app-badge-icon android" src="img/playstore.png" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -420,7 +419,7 @@
       <!-- Menu Header -->
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
-          <h1 class="section-heading translatable" data-i18n="menu header">Menu</h1>
+          <h1 class="section-heading">Menu</h1>
           <hr class="my-4">
         </div>
       </div>
@@ -436,7 +435,7 @@
       <div class="row">
         <div class="col-lg-4 mx-auto mb-3 mb-md-0 row-height-30">
           <div class="card h-100 map text-center">
-            <div class="header text-uppercase translatable" data-i18n="location card header">
+            <div class="header text-uppercase">
               Location
             </div>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2608.9637032732303!2d-123.1382459835738!3d49.16329717931857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54860ab5eacc8a77%3A0x9564d366da3a5352!2s8060+Anderson+Rd%2C+Richmond%2C+BC+V6Y+2C5%2C+Canada!5e0!3m2!1sen!2sus!4v1536564631927"
@@ -446,7 +445,7 @@
         <div class="col-lg-4 mx-auto mb-3 mb-md-0 row-height-30">
           <a class="h-100" href="mailto:pokeyokeyyvr@gmail.com">
             <div class="card h-100 waves-light text-center">
-              <div class="header text-uppercase translatable" data-i18n="email card header">
+              <div class="header text-uppercase">
                 Email
               </div>
               <div class="card-body center-vertical">
@@ -461,7 +460,7 @@
         <div class="col-lg-4 mx-auto mb-3 mb-md-0 row-height-30">
           <a class="h-100" href="tel:+1 604 370 0229">
             <div class="card h-100 waves-light text-center">
-              <div class="header text-uppercase translatable" data-i18n="phone card header">
+              <div class="header text-uppercase">
                 Phone
               </div>
               <div class="card-body center-vertical">
@@ -477,8 +476,7 @@
   </div>
 
   <!-- Vue.js -->
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://unpkg.com/vue-meta@1.5.8/lib/vue-meta.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.min.js"></script>
 
   <!-- Bootstrap core JavaScript -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

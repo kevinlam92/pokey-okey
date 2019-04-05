@@ -1,10 +1,7 @@
-var menu =
-{
-  "sections" : [
-    {
+const MENU = {
+  "sections": [{
       "header": "Signature Bowls",
-      "items": [
-        {
+      "items": [{
           "name": "Small",
           "price": "11.00"
         },
@@ -20,8 +17,7 @@ var menu =
     },
     {
       "header": "Choose from",
-      "items": [
-        {
+      "items": [{
           "image": "img/menu/green_bowl.jpg",
           "name": "The Green Bowl",
           "description": "Tuna, salmon, capelin roe, seaweed salad, purple cabbage, soybeans, pickled onions, pickled ginger, wasabi peas, seaweed flakes, and wasabi mayo.",
@@ -40,8 +36,7 @@ var menu =
     },
     {
       "header": "with your choice of",
-      "items": [
-        {
+      "items": [{
           "image": "img/menu/rice.jpg",
           "name": "Rice"
         },
@@ -61,8 +56,7 @@ var menu =
     },
     {
       "header": "Additional Options",
-      "items": [
-        {
+      "items": [{
           "image": "img/menu/avocado.jpg",
           "name": "Avocado",
           "price": "2.00"
@@ -136,8 +130,7 @@ var menu =
     },
     {
       "header": "Build-A-Bowl",
-      "items": [
-        {
+      "items": [{
           "name": "Small (One Scoop)",
           "price": "10.00"
         },
@@ -153,8 +146,7 @@ var menu =
     },
     {
       "header": "Base (Choose 1/2/3)",
-      "items": [
-        {
+      "items": [{
           "image": "img/menu/rice.jpg",
           "name": "Rice"
         },
@@ -170,8 +162,7 @@ var menu =
     },
     {
       "header": "Protein (Choose 1/2/3)",
-      "items": [
-        {
+      "items": [{
           "image": "img/menu/avocado.jpg",
           "name": "Avocado",
         },
@@ -220,7 +211,7 @@ var menu =
         },
         {
           "image": "img/menu/onsen_egg.jpg",
-          "name": "Pokey Yokey (Onsen egg)",
+          "name": "Pokey Yokey",
           "price": "2.00"
         },
         {
@@ -232,8 +223,7 @@ var menu =
     },
     {
       "header": "Vegetables (Choose 4)",
-      "items": [
-        {
+      "items": [{
           "image": "img/menu/edamame.jpg",
           "name": "Soybeans"
         },
@@ -294,8 +284,7 @@ var menu =
     },
     {
       "header": "Dry Toppings",
-      "items": [
-        {
+      "items": [{
           "image": "img/menu/garlic.jpg",
           "name": "Fried Garlic"
         },
@@ -327,8 +316,7 @@ var menu =
     },
     {
       "header": "Premium Toppings",
-      "items": [
-        {
+      "items": [{
           "image": "img/menu/egg.jpg",
           "name": "Sweet Omelette",
           "price": "1.00"
@@ -357,8 +345,7 @@ var menu =
     },
     {
       "header": "Sauces",
-      "items": [
-        {
+      "items": [{
           "name": "Pokey Okey Sauce",
           "description": "Special house sauce, sweet with a hint of tanginess"
         },
@@ -385,8 +372,7 @@ var menu =
     },
     {
       "header": "Drinks",
-      "items": [
-        {
+      "items": [{
           "name": "Bubly Lime",
           "description": "355mL",
           "price": "1.50"

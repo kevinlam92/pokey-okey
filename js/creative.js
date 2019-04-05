@@ -15,12 +15,6 @@
     }
   });
 
-  $('a.lang-link').click(function() {
-    var target = $(this).attr('href');
-    updateLanguage(target);
-  });
-
-
   // Closes responsive menu when a scroll trigger link is clicked
   $('.js-scroll-trigger').click(function() {
     $('.navbar-collapse').collapse('hide');
@@ -78,13 +72,14 @@
   });
 
   $('.scoop-container').height($('#scoop-bg').height());
-  $(window).on('resize', function(){
+  $(window).on('resize', function() {
     $('.scoop-container').height($('#scoop-bg').height());
   });
 
   $(window).on('load', function() {
     var header = $('header.masthead');
-    header.attr('class','masthead text-center text-white d-flex bg-fade bg-transparent');
+    header.attr('class', 'masthead text-center text-white d-flex bg-fade bg-transparent');
+    $('.scoop-container').height($('#scoop-bg').height());
   });
 
   var date = new Date();
@@ -104,21 +99,49 @@
 
   var scene = document.getElementById('hand-scene');
   var parallaxInstance = new Parallax(scene);
-  $('#scene-clamp').attr('class','shadow-lg');
+  $('#scene-clamp').attr('class', 'shadow-lg');
 
   $('.header-btn').on('mousedown', function() {
-    $('header.masthead').attr('class','masthead text-center text-white d-flex bg-white');
-    $('#order-mask').attr('class',"header-mask mask rgba-red-strong bg-white");
-    $('#social-container').attr('class','d-lg-flex hidden');
+    $('header.masthead').attr('class', 'masthead text-center text-white d-flex bg-white');
+    $('#order-mask').attr('class', "header-mask mask rgba-red-strong bg-white");
   });
   $('.header-btn').on('mouseup', function() {
-    $('header.masthead').attr('class','masthead text-center text-white d-flex bg-fade bg-transparent');
-    $('#order-mask').attr('class',"header-mask mask rgba-white-strong bg-fade");
-    $('#social-container').attr('class','d-lg-flex');
-    window.scrollTo(0, $('#order').offset().top);
+    $('header.masthead').attr('class', 'masthead text-center text-white d-flex bg-fade bg-transparent');
+    $('#order-mask').attr('class', "header-mask mask rgba-white-strong bg-fade");
+    window.scrollTo(0, $('#order').offset().top - 56);
   });
 
-  $('.form-radio-button').click(function() { $(this).toggleClass('selected')});
+  function getMobileOperatingSystem() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    if (/android/i.test(userAgent)) {
+      return 1;
+    }
+    // iOS detection from: http://stackoverflow.com/a/9039885/177710
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      return 2;
+    }
+    return 0;
+  }
+
+  switch (getMobileOperatingSystem()) {
+    case 1:
+      //android
+      $('#fantuan .app-badge-icon').hide();
+      $('#fantuan .app-badge-icon.android').show();
+      $('#fantuan .app-tagline').hide();
+      $('#fantuan').attr('href', 'https://play.google.com/store/apps/details?id=com.ca.fantuan.customer&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1');
+      break;
+    case 2:
+      //ios
+      $('#fantuan .app-badge-icon').hide();
+      $('#fantuan .app-badge-icon.ios').show();
+      $('#fantuan .app-tagline').hide();
+      $('#fantuan').attr('href', 'https://itunes.apple.com/ca/app/%E9%A5%AD%E5%9B%A2-%E5%8A%A0%E6%8B%BF%E5%A4%A7%E5%A4%96%E5%8D%96%E9%A4%90%E9%A5%AE%E5%93%81%E8%B4%A8%E6%9C%8D%E5%8A%A1%E5%B9%B3%E5%8F%B0/id1218697769?mt=8');
+      break;
+    default:
+      $('#fantuan .app-badge-icon').hide();
+      $('#fantuan .app-tagline').show();
+  }
 
 })(jQuery); // End of use strict
 
@@ -126,44 +149,42 @@
 
 Vue.component('menu-section', {
   props: ['header'],
-  template:
-  '<div class="row mb-5">'+
-  ' <div class="col-lg-12 mx-auto text-center my-4">'+
-  '   <h3 class="section-heading">{{ header }}</h3>'+
-  ' </div>'+
-  ' <slot></slot>'+
-  '</div>'
+  template: '<div class="row mb-5">' +
+    ' <div class="col-lg-12 mx-auto text-center my-4">' +
+    '   <h3 class="section-heading">{{ header }}</h3>' +
+    ' </div>' +
+    ' <slot></slot>' +
+    '</div>'
 });
 
 Vue.component('menu-item', {
   props: ['image', 'name', 'price', 'description'],
-  template:
-  '<div v-bind:class="[(image && image.startsWith(\'fa-\')) ? \'col-lg-12\' : \'col-lg-4\' ]" class="text-center">'+
-  ' <div class="menu-item">'+
-  '  <div v-if="image" class="menu-thumb-container sr-icons">'+
-  '    <picture v-if="!image.startsWith(\'fa-\')">'+
-  '      <source v-bind:srcset="image.substr(0, image.lastIndexOf(\'.\')) + \'.webp\'" type="image/webp">'+
-  '      <source v-bind:srcset="image" type="image/jpg">'+
-  '      <img class="menu-thumb" v-bind:src="image"/>'+
-  '    </picture>'+
-  '    <div v-if="image.startsWith(\'fa-\')" class="fa-stack">'+
-  '      <i class="fa fa-circle fa-stack-2x text-primary"></i>'+
-  '      <i v-bind:class="image" class="fas fa-stack-1x text-white"></i>'+
-  '    </div>'+
-  '  </div>'+
-  '  <div class="menu-item-content">'+
-  '    <div class="menu-item-title">'+
-  '      <p v-if="name" class="name">{{ name }}</p>'+
-  '      <p class="spacer"/>'+
-  '      <p v-if="price" class="price">${{ price }}</p>'+
-  '    </div>'+
-  '    <p v-if="description" class="description mb-5">{{ description }}</p>'+
-  '  </div>'+
-  ' </div>'+
-  '</div>'
+  template: '<div v-bind:class="[(image && image.startsWith(\'fa-\')) ? \'col-lg-12\' : \'col-lg-4\' ]" class="text-center">' +
+    ' <div class="menu-item">' +
+    '  <div v-if="image" class="menu-thumb-container sr-icons">' +
+    '    <picture v-if="!image.startsWith(\'fa-\')">' +
+    '      <source v-bind:srcset="image.substr(0, image.lastIndexOf(\'.\')) + \'.webp\'" type="image/webp">' +
+    '      <source v-bind:srcset="image" type="image/jpg">' +
+    '      <img class="menu-thumb" v-bind:src="image"/>' +
+    '    </picture>' +
+    '    <div v-if="image.startsWith(\'fa-\')" class="fa-stack">' +
+    '      <i class="fa fa-circle fa-stack-2x text-primary"></i>' +
+    '      <i v-bind:class="image" class="fas fa-stack-1x text-white"></i>' +
+    '    </div>' +
+    '  </div>' +
+    '  <div class="menu-item-content">' +
+    '    <div class="menu-item-title">' +
+    '      <p v-if="name" class="name">{{ name }}</p>' +
+    '      <p class="spacer"/>' +
+    '      <p v-if="price" class="price">${{ price }}</p>' +
+    '    </div>' +
+    '    <p v-if="description" class="description mb-5">{{ description }}</p>' +
+    '  </div>' +
+    ' </div>' +
+    '</div>'
 });
 
-var menu =  new Vue({
+var menu = new Vue({
   el: '#menu',
-  data : menu
+  data: MENU
 });

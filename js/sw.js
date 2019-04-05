@@ -22,7 +22,7 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-  /\.(?:js|css|html)$/,
+  /\.(?:js|css|html|json)$/,
   workbox.strategies.staleWhileRevalidate({
     cacheName: 'static-resources',
   })

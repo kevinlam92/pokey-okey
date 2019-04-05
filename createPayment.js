@@ -1,0 +1,487 @@
+  const STRIPE_SECRET_KEY = "sk_test_fLrrGhlF2eaveIPhWqjjC7vq";
+
+  const ORDERS = {
+    "buildBase": [{
+        "id": "WhiteRice",
+        "name": "White Rice",
+        "price": "0"
+      },
+      {
+        "id": "BrownRice",
+        "name": "Brown Rice",
+        "price": "0"
+      },
+      {
+        "id": "SpringMix",
+        "name": "Spring Mix",
+        "price": "0"
+      },
+    ],
+    "buildProtein": [{
+        "id": "Ahi",
+        "name": "Ahi",
+        "price": "0"
+      },
+      {
+        "id": "Salmon",
+        "name": "Salmon",
+        "price": "0"
+      },
+      {
+        "id": "Scallop",
+        "name": "Scallop Salad",
+        "price": "0"
+      },
+      {
+        "id": "SpicyAhi",
+        "name": "Spicy Ahi",
+        "price": "0"
+      },
+      {
+        "id": "SpicySalmon",
+        "name": "Spicy Salmon",
+        "price": "0"
+      },
+      {
+        "id": "SweetOmelette",
+        "name": "Sweet Omelette",
+        "price": "0"
+      },
+      {
+        "id": "Tofu",
+        "name": "Tofu",
+        "price": "0"
+      },
+      {
+        "id": "Avocado",
+        "name": "Avocado",
+        "price": "0"
+      },
+      {
+        "id": "CoconutShrimp",
+        "name": "Coconut Shrimp",
+        "price": "0"
+      },
+      {
+        "id": "Octopus",
+        "name": "Octopus",
+        "price": "1.50"
+      },
+      {
+        "id": "TorchedSalmonBelly",
+        "name": "Torched Salmon Belly",
+        "price": "1.50"
+      }
+    ],
+    "buildVegetable": [{
+        "id": "Soybeans",
+        "name": "Soybeans",
+        "price": "0"
+      },
+      {
+        "id": "Kimchi",
+        "name": "Kimchi",
+        "price": "0"
+      },
+      {
+        "id": "Seaweed",
+        "name": "Seaweed Salad",
+        "price": "0"
+      },
+      {
+        "id": "CarrotDaikon",
+        "name": "Carrot and Daikon",
+        "price": "0"
+      },
+      {
+        "id": "PurpleCabbage",
+        "name": "Purple Cabbage",
+        "price": "0"
+      },
+      {
+        "id": "Radish",
+        "name": "Radish",
+        "price": "0"
+      },
+      {
+        "id": "SweetCorn",
+        "name": "Sweet Corn",
+        "price": "0"
+      },
+      {
+        "id": "Sprouts",
+        "name": "Sprouts",
+        "price": "0"
+      },
+      {
+        "id": "ImitationCrab",
+        "name": "Imitation Crab",
+        "price": "0"
+      },
+      {
+        "id": "GreenOnion",
+        "name": "Green Onion",
+        "price": "0"
+      },
+      {
+        "id": "PineappleSalsa",
+        "name": "Pineapple Salsa",
+        "price": "0"
+      },
+      {
+        "id": "PickledGinger",
+        "name": "Pickled Ginger",
+        "price": "0"
+      },
+      {
+        "id": "PickledOnion",
+        "name": "Pickled Onion",
+        "price": "0"
+      },
+    ],
+    "buildExtraProtein": [{
+        "id": "Ahi",
+        "name": "Ahi",
+        "price": "2.50"
+      },
+      {
+        "id": "Salmon",
+        "name": "Salmon",
+        "price": "2.50"
+      },
+      {
+        "id": "Scallop",
+        "name": "Scallop Salad",
+        "price": "2.50"
+      },
+      {
+        "id": "SpicyAhi",
+        "name": "Spicy Ahi",
+        "price": "2.50"
+      },
+      {
+        "id": "SpicySalmon",
+        "name": "Spicy Salmon",
+        "price": "2.50"
+      },
+      {
+        "id": "Tofu",
+        "name": "Tofu",
+        "price": "2.50"
+      },
+      {
+        "id": "CoconutShrimp",
+        "name": "Coconut Shrimp",
+        "price": "2.50"
+      },
+      {
+        "id": "Octopus",
+        "name": "Octopus",
+        "price": "4.00"
+      },
+      {
+        "id": "TorchedSalmonBelly",
+        "name": "Torched Salmon Belly",
+        "price": "4.00"
+      },
+    ],
+    "buildExtraVegetables": [{
+        "id": "Soybeans",
+        "name": "Soybeans",
+        "price": "0.50"
+      },
+      {
+        "id": "Kimchi",
+        "name": "Kimchi",
+        "price": "0.50"
+      },
+      {
+        "id": "Seaweed",
+        "name": "Seaweed Salad",
+        "price": "0.50"
+      },
+      {
+        "id": "CarrotDaikon",
+        "name": "Carrot and Daikon",
+        "price": "0.50"
+      },
+      {
+        "id": "PurpleCabbage",
+        "name": "Purple Cabbage",
+        "price": "0.50"
+      },
+      {
+        "id": "Radish",
+        "name": "Radish",
+        "price": "0.50"
+      },
+      {
+        "id": "SweetCorn",
+        "name": "Sweet Corn",
+        "price": "0.50"
+      },
+      {
+        "id": "Sprouts",
+        "name": "Sprouts",
+        "price": "0.50"
+      },
+      {
+        "id": "ImitationCrab",
+        "name": "Imitation Crab",
+        "price": "0.50"
+      },
+      {
+        "id": "GreenOnion",
+        "name": "Green Onion",
+        "price": "0.50"
+      },
+      {
+        "id": "PineappleSalsa",
+        "name": "Pineapple Salsa",
+        "price": "0.50"
+      },
+      {
+        "id": "PickledGinger",
+        "name": "Pickled Ginger",
+        "price": "0.50"
+      },
+      {
+        "id": "PickledOnion",
+        "name": "Pickled Onion",
+        "price": "0.50"
+      },
+    ],
+    "buildSauce": [{
+        "id": "PokeyOkey",
+        "name": "Pokey Okey Sauce",
+        "price": "0"
+      },
+      {
+        "id": "WasabiMayo",
+        "name": "Wasabi Mayo",
+        "price": "0"
+      },
+      {
+        "id": "SpicySesame",
+        "name": "Spicy Sesame Sauce",
+        "price": "0"
+      },
+      {
+        "id": "MisoSesame",
+        "name": "Miso Sesame Sauce",
+        "price": "0"
+      },
+      {
+        "id": "PonzuVinaigrette",
+        "name": "Ponzu Vinaigrette",
+        "price": "0"
+      },
+      {
+        "id": "SmokeyTeriyaki",
+        "name": "Smokey Teriyaki",
+        "price": "0"
+      },
+    ],
+    "buildDry": [{
+        "id": "FriedGarlic",
+        "name": "Fried Garlic",
+        "price": "0"
+      },
+      {
+        "id": "FriedOnions",
+        "name": "Fried Onions",
+        "price": "0"
+      },
+      {
+        "id": "WasabiPeas",
+        "name": "Wasabi Peas",
+        "price": "0"
+      },
+      {
+        "id": "SeaweedFlakes",
+        "name": "Seaweed Flakes",
+        "price": "0"
+      },
+      {
+        "id": "TempuraFlakes",
+        "name": "Tempura Flakes",
+        "price": "0"
+      },
+      {
+        "id": "BaconBits",
+        "name": "Bacon Bits",
+        "price": "0"
+      },
+      {
+        "id": "RamenNoodles",
+        "name": "Ramen Noodles",
+        "price": "0"
+      },
+    ],
+    "buildPremium": [{
+        "id": "SweetOmelette",
+        "name": "Sweet Omelette",
+        "price": "1.00"
+      },
+      {
+        "id": "CapelinRoe",
+        "name": "Capelin Roe",
+        "price": "1.00"
+      },
+      {
+        "id": "Avocado",
+        "name": "Avocado",
+        "price": "2.00"
+      },
+      {
+        "id": "FlyingFishRoe",
+        "name": "Flying Fish Roe",
+        "price": "2.00"
+      },
+      {
+        "id": "PokeyYokey",
+        "name": "Pokey Yokey",
+        "price": "2.00"
+      },
+    ],
+    "signatureSize": [{
+        "id": "Small",
+        "name": "Small",
+        "price": "0"
+      },
+      {
+        "id": "Medium",
+        "name": "Medium",
+        "price": "2.50"
+      },
+      {
+        "id": "Large",
+        "name": "Large",
+        "price": "5.00"
+      },
+    ],
+    "signatureBase": [{
+        "id": "WhiteRice",
+        "name": "White Rice",
+        "price": "0"
+      },
+      {
+        "id": "BrownRice",
+        "name": "Brown Rice",
+        "price": "0"
+      },
+      {
+        "id": "SpringMix",
+        "name": "Spring Mix",
+        "price": "0"
+      },
+    ],
+    "signatureAddOn": [{
+        "id": "Avocado",
+        "name": "Avocado",
+        "price": "2.00"
+      },
+      {
+        "id": "Tofu",
+        "name": "Tofu",
+        "price": "2.50"
+      },
+      {
+        "id": "Octopus",
+        "name": "Octopus",
+        "price": "4.00"
+      },
+      {
+        "id": "CoconutShrimp",
+        "name": "Coconut Shrimp",
+        "price": "2.50"
+      },
+      {
+        "id": "Salmon",
+        "name": "Salmon",
+        "price": "2.50"
+      },
+      {
+        "id": "SpicySalmon",
+        "name": "Spicy Salmon",
+        "price": "2.50"
+      },
+      {
+        "id": "Ahi",
+        "name": "Ahi",
+        "price": "2.50"
+      },
+      {
+        "id": "SpicyAhi",
+        "name": "Spicy Ahi ",
+        "price": "2.50"
+      },
+      {
+        "id": "Scallop",
+        "name": "Scallop Salad",
+        "price": "2.50"
+      },
+      {
+        "id": "TorchedSalmonBelly",
+        "name": "Torched Salmon Belly",
+        "price": "4.00"
+      },
+      {
+        "id": "CapelinRoe",
+        "name": "Capelin Roe",
+        "price": "1.00"
+      },
+      {
+        "id": "FlyingFishRoe",
+        "name": "Flying Fish Roe",
+        "price": "2.00"
+      },
+      {
+        "id": "SweetOmelette",
+        "name": "Sweet Omelette",
+        "price": "1.00"
+      },
+      {
+        "id": "PokeyYokey",
+        "name": "Pokey Yokey",
+        "price": "2.00"
+      },
+    ]
+  };
+
+  exports.handler = async (event) => {
+
+
+    // Set your secret key: remember to change this to your live secret key in production
+    // See your keys here: https://dashboard.stripe.com/account/apikeys
+    var stripe = require("stripe")(STRIPE_SECRET_KEY);
+
+    // Token is created using Checkout or Elements!
+    // Get the payment token ID submitted by the form:
+    const token = request.body.stripeToken; // Using Express
+
+    function details2Price(order) {
+      const priceList = {
+        "buildModal":
+      }
+      for (var i = 0; i < order.length; i++) {
+        let details = order.details;
+
+      }
+
+    }
+
+    (async () => {
+      const charge = await stripe.charges.create({
+        amount: 999,
+        currency: 'usd',
+        description: 'Example charge',
+        source: token,
+      });
+    })();
+    const response = {
+      statusCode: 200,
+      body: JSON.stringify('Hello from Lambda!'),
+    };
+    return response;
+  };
